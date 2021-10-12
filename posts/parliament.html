@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>hkanalytics Anaysis of Uganda MP data</title>
+		<meta name="viewport" content="width=divice-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Uganda, statistics, econometrics, machine learning, python, statsmodels">
+		<meta name="author" content="Kateu Herbert">
+		<meta name="robots" content="index, follow">
+
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="css/docs.css" rel="stylesheet">
+		<script src="jquery/jquery-1.11.1.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+				
+	</head>
+	<body>
+		
+<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse"> 
+	<span class="sr-only">Toggle navigation</span> 
+	<span class="icon-bar"></span> 
+	<span class="icon-bar"></span> 
+	<span class="icon-bar"></span> 
+</button>
+
+	<a class="navbar-brand" style = "color:yellow;">hkanalystics</a>
+</div>
+<div class="collapse navbar-collapse" id="example-navbar-collapse">
+	<ul class="nav navbar-nav">
+	<li style="padding-left:0px;" class="active"><a href="#">Home</a></li>
+	<li style="padding-left:0px;"><a href="about.php">About</a></li>
+	<li style="padding-left:0px;"><a href="contact.php">Contact</a></li>
+	</ul>
+</div>
+</nav>
+
+		<div class="container col-md-12">
+			<div class="col-md-12">
+				<h1>Analysis of Uganda MPs data</h1>
+				<p>This page show some techniques i've used to analyse data on MPs (Members of Parliaments) from the 10th parliament in Ugandan so that we can get some insight on them. This dataset was posted on <a href="catalog.data.ug/dataset/member-of-the-10th-parliament-resumes-and-contacts">catalog.data.ug</a> on November 6th 2017, and id like to thank Lydia Namubiru for posting it. </p>
+				<p>This data contains names, districs, constituents, committees, phone numbers, education background, past empoyment details, stated hobbies and other informations on all 439 members  of the 10th parliament of Uganda. The data was scrapped from the official website of the parliament of Uganda.</p>
+			</div>
+		<div class="col-md-12">
+			<h2>Importing the necessary libraries</h2>
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>%matplotlib inline</p>
+			<p>import pandas as pd</p>
+			<p>import numpy as np</p>
+			<p>from pandas import DataFrame, Series</p>
+			<p>import matplotlib.pyplot as plt</p>
+			<p>from wordcloud import WordCloud, STOPWORDS</p>
+			</code>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>f = 0</p>
+			<p>for x in range(8,15):</p>
+			<p>&nbsp; f += sum(np.random.binomial(15, 0.30, 20000) == x)/20000</p>
+			<p>print(f)</p>
+		</code>
+		<div class="col-md-12">
+		0.0504
+		</div>
+		<div class="col-md-12">
+			<h3>Mean, Variance and Standard Deviation</h3>
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>from scipy.stats import binom</p>
+			</code>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+		<p>m, v = binom.stats(10,0.2, loc=0, moments='mv')</p>	
+		</code>
+		<div class="col-md-12">
+			<p>The binom class takes on two parameters, n and p in the code above, in this case we are finding the mean and variance where n=10 and p=0.2.</p>
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>from math import sqrt</p>
+		</code>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+		m,v,sqrt(v)
+		</code>
+		<div class="col-md-12">
+			<p>(array(2.0), array(1.6), 1.2649110640673518)</p>	
+		</div>
+		<div class="col-md-12">
+			<h4>Another method for finding mean and variance of a binomial distribution</h4>
+		</div>
+		<div class="col-md-12">
+			<p>Mean of a binomial distribution</p>	
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>binom.mean(10,0.2)</p>	
+		</code>
+		<div class="col-md-12">
+			<p>2.0</p>	
+		</div>
+		<div class="col-md-12">
+			<p>Variance of a binomial distribution</p>
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>binom.var(10,0.2) </p>	
+		</code>
+		<div class="col-md-12">
+			<p>1.6000000000000001</p>
+		</div>
+		<div class="col-md-12">
+			<p>Standard Deviation of a binomial distribution</p>
+		</div>
+		<code class="col-md-12 col-sm-12 col-xs-12">
+			<p>binom.std(10,0.2)</p>
+		</code>
+		<div class="col-md-12">
+			<p>1.2649110640673518</p>
+		<div>
+
+<div class="col-md-12 col-sm-12 col-xs-12" style="height:auto; background-color:black; color:white;  padding:0px;">
+<div class="col-md-6" style="padding:0:px;">
+<img src="profile.jpg" style="height:10%; width:10%; margin-top:10px;" class="img-rounded">
+<p>Kateu Herbert is a Statistics & Economics graduate from Kyambogo University. He is the brainchild of hkanalytics, a blog dedicated to providing solutions to problems using opens source technology like Python and R-programming. He has expertise in Machine Learning, Statistics, Econometrics and has participated in many projects in and around the country.</p>
+<p>For more info go to <a href="about.php">About</a></p>
+<p>You can get in <a href="contact.php">contact</a> with him</p>
+</div>
+<div class="col-md-6" style="height:auto; padding:0px;">
+<div class="col-md-12"><center><h4>TAGS</h4></center></div>
+<div class="col-md-6 col-sm-6 col-xs-6" id="foottags" style="height:auto;">
+<ul style="list-style:none; padding:0px;">
+<li><a href="index.php?tag=1">Econometrics</a></li>
+<li><a href="index.php?tag=2">Python</a></li>
+<li><a href="index.php?tag=3">Matplotlib</a></li>
+<li><a href="index.php?tag=4">Pandas</a></li>
+<li><a href="index.php?tag=5">Statsmodels</a></li>
+<li><a href="index.php?tag=6">Scipy</a></li>
+<li><a href="index.php?tag=7">Numpy</a></li>
+</ul>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-6" style="height:auto; padding:0px;">
+<ul style="list-style:none;">
+
+</ul>
+
+</div>
+</div>
+
+		</div>
+	</body>
+
+</html>

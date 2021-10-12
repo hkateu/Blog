@@ -1,0 +1,75 @@
+div.codehold {
+	background-color:rgb(245,245,245);
+	border:solid 1px rgb(216,216,216);
+	margin:2px;
+	overflow-x:scroll;
+	overflow-y:hidden;
+	white-space:nowrap;
+	position:relative;
+	}
+div.movable{
+	background-color:white;
+	border:solid 1px rgb(216,216,216);
+	margin:2px;
+	overflow-x:scroll;
+	overflow-y:hidden;
+	white-space:nowrap;
+	position:relative;
+}
+pre{
+	background-color:white;
+	border:none;
+}
+pre.code{
+	border:none;
+	background-color:rgb(245,245,245);
+	padding:none;
+}
+div table{
+	margin-top:10px;
+}
+div.codehold code{
+	background-color:rgb(245,245,245);
+	color:black;
+}
+div.codehold code p.codeind{
+	text-indent:150px;
+} 	
+div{
+	text-align:;
+	}
+h1,h2,h3,h4{
+	color:rgb(187,0,4);
+}
+a{
+color:rgb(240,96,0);
+text-decoration:none;
+}
+.btn{
+background-color:rgb(240,96,0);
+border-radius:2px;
+color:white;
+text-decoration:none;
+}
+.btn:hover{
+background-color:rgb(255,113,17);
+color:white;
+}
+nav.navbar{
+	border-radius:0px; 
+	background-color:rgb(129,138,213); 
+	border:none;
+}
+div.navbar-collapse{
+	background-color:rgb(129,138,213);
+	color:purple;
+}
+div.navbar-collapse ul.navbar-nav > li > a:hover{
+	background-color:white;
+}
+div.navbar-collapse>ul>li:hover{
+	background-color:rgb(99,111,190);
+}
+
+body{
+}

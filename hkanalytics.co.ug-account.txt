@@ -1,0 +1,31 @@
+Hosting Account Information
+
+===========================================================
+
+Hosting Package: Economy Plan
++===================================+
+| Domain: hkanalytics.co.ug
+| UserName: hkanalytics
+| PassWord: P(?4hQl}s*]!
+| Quota: 1,000 MB
++===================================+
+
+FTP Hostname:  hkanalytics.co.ug
+Webpage URL: http://hkanalytics.co.ug
+Control Panel: http://hkanalytics.co.ug/cpanel
+
+
+=======================
+e-Mail Information
+=======================
+
+To access emails via web, you can use the URL
+
+http://hkanalytics.co.ug/webmail
+
+================================================================
+
+Thank you for hosting your website with us.
+
+Billing Team
+Crystal Webhosting
